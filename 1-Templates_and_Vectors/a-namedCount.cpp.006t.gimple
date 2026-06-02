@@ -1,0 +1,914 @@
+int main ()
+{
+  const struct string D.49905;
+  struct allocator D.49904;
+  const int D.49906;
+  const int D.49910;
+  bool retval.0;
+  int D.54256;
+
+  {
+    {
+      struct NamedValue i;
+
+      try
+        {
+          try
+            {
+              try
+                {
+                  std::allocator<char>::allocator (&D.49904);
+                  try
+                    {
+                      std::__cxx11::basic_string<char>::basic_string<> (&D.49905, "Count", &D.49904);
+                      try
+                        {
+                          try
+                            {
+                              D.49906 = 0;
+                              NamedValue<int>::NamedValue (&i, &D.49905, &D.49906);
+                            }
+                          finally
+                            {
+                              D.49906 = {CLOBBER(eol)};
+                            }
+                        }
+                      finally
+                        {
+                          std::__cxx11::basic_string<char>::~basic_string (&D.49905);
+                        }
+                    }
+                  finally
+                    {
+                      std::allocator<char>::~allocator (&D.49904);
+                    }
+                }
+              finally
+                {
+                  D.49904 = {CLOBBER(eol)};
+                }
+            }
+          finally
+            {
+              D.49905 = {CLOBBER(eol)};
+            }
+          try
+            {
+              goto <D.49946>;
+              <D.49945>:
+              _1 = operator<< <int> (&cout, &i);
+              std::basic_ostream<char>::operator<< (_1, endl);
+              try
+                {
+                  _2 = NamedValue<int>::value (&i);
+                  _3 = _2 + 1;
+                  D.49910 = _3;
+                  NamedValue<int>::operator= (&i, &D.49910);
+                }
+              finally
+                {
+                  D.49910 = {CLOBBER(eol)};
+                }
+              <D.49946>:
+              _4 = NamedValue<int>::value (&i);
+              retval.0 = _4 <= 9;
+              if (retval.0 != 0) goto <D.49945>; else goto <D.49943>;
+              <D.49943>:
+            }
+          finally
+            {
+              NamedValue<int>::~NamedValue (&i);
+            }
+        }
+      finally
+        {
+          i = {CLOBBER(eol)};
+        }
+    }
+  }
+  D.54256 = 0;
+  return D.54256;
+}
+
+
+__attribute__((always_inline))
+void std::allocator<char>::allocator (struct allocator * const this)
+{
+  try
+    {
+      {
+        std::__new_allocator<char>::__new_allocator (this);
+        try
+          {
+
+          }
+        catch
+          {
+            std::__new_allocator<char>::~__new_allocator (this);
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (terminate)>>>
+    }
+}
+
+
+__attribute__((always_inline))
+void std::__new_allocator<char>::__new_allocator (struct __new_allocator * const this)
+{
+  try
+    {
+      {
+
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (terminate)>>>
+    }
+}
+
+
+void std::__cxx11::basic_string<char>::basic_string<> (struct basic_string * const this, const char * __s, const struct allocator & __a)
+{
+  struct forward_iterator_tag D.54270;
+
+  *this = {CLOBBER};
+  {
+    _1 = &this->_M_dataplus;
+    _2 = std::__cxx11::basic_string<char>::_M_local_data (this);
+    std::__cxx11::basic_string<char>::_Alloc_hider::_Alloc_hider (_1, _2, __a);
+    try
+      {
+        {
+          const char * __end;
+
+          if (__s == 0B) goto <D.54268>; else goto <D.54269>;
+          <D.54268>:
+          std::__throw_logic_error ("basic_string: construction from null is not valid");
+          <D.54269>:
+          _3 = std::char_traits<char>::length (__s);
+          __end = __s + _3;
+          std::__cxx11::basic_string<char>::_M_construct<const char*> (this, __s, __end, D.54270);
+        }
+      }
+    catch
+      {
+        _4 = &this->_M_dataplus;
+        std::__cxx11::basic_string<char>::_Alloc_hider::~_Alloc_hider (_4);
+      }
+  }
+}
+
+
+void std::__cxx11::basic_string<char>::_Alloc_hider::_Alloc_hider (struct _Alloc_hider * const this, char * __dat, const struct allocator & __a)
+{
+  *this = {CLOBBER};
+  {
+    std::allocator<char>::allocator (this, __a);
+    try
+      {
+        this->_M_p = __dat;
+      }
+    catch
+      {
+        std::allocator<char>::~allocator (this);
+      }
+  }
+}
+
+
+__attribute__((always_inline))
+void std::allocator<char>::allocator (struct allocator * const this, const struct allocator & __a)
+{
+  try
+    {
+      {
+        std::__new_allocator<char>::__new_allocator (this, __a);
+        try
+          {
+
+          }
+        catch
+          {
+            std::__new_allocator<char>::~__new_allocator (this);
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (terminate)>>>
+    }
+}
+
+
+__attribute__((always_inline))
+void std::__new_allocator<char>::__new_allocator (struct __new_allocator * const this, const struct __new_allocator & D.11361)
+{
+  try
+    {
+      {
+
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (terminate)>>>
+    }
+}
+
+
+size_t std::char_traits<char>::length (const char_type * __s)
+{
+  bool retval.1;
+  size_t D.54276;
+
+  retval.1 = std::__is_constant_evaluated ();
+  if (retval.1 != 0) goto <D.54274>; else goto <D.54275>;
+  <D.54274>:
+  D.54276 = __gnu_cxx::char_traits<char>::length (__s);
+  return D.54276;
+  <D.54275>:
+  D.54276 = __builtin_strlen (__s);
+  return D.54276;
+}
+
+
+bool std::__is_constant_evaluated ()
+{
+  bool D.54279;
+
+  try
+    {
+      D.54279 = 0;
+      return D.54279;
+    }
+  catch
+    {
+      <<<eh_must_not_throw (terminate)>>>
+    }
+  __builtin_unreachable trap ();
+}
+
+
+size_t __gnu_cxx::char_traits<char>::length (const char_type * __p)
+{
+  bool retval.2;
+  const char_type D.49950;
+  size_t D.54282;
+  size_t __i;
+
+  __i = 0;
+  goto <D.49956>;
+  <D.49957>:
+  __i = __i + 1;
+  <D.49956>:
+  try
+    {
+      D.49950 = 0;
+      _1 = __p + __i;
+      _2 = __gnu_cxx::char_traits<char>::eq (_1, &D.49950);
+      retval.2 = ~_2;
+    }
+  finally
+    {
+      D.49950 = {CLOBBER(eol)};
+    }
+  if (retval.2 != 0) goto <D.49957>; else goto <D.49955>;
+  <D.49955>:
+  D.54282 = __i;
+  return D.54282;
+}
+
+
+bool __gnu_cxx::char_traits<char>::eq (const char_type & __c1, const char_type & __c2)
+{
+  bool D.54284;
+
+  _1 = *__c1;
+  _2 = *__c2;
+  D.54284 = _1 == _2;
+  return D.54284;
+}
+
+
+void std::__cxx11::basic_string<char>::_M_construct<const char*> (struct basic_string * const this, const char * __beg, const char * __end, struct forward_iterator_tag D.52273)
+{
+  size_type __dnew;
+  typedef extern struct _Guard _Guard;
+  struct _Guard __guard;
+
+  try
+    {
+      _1 = std::distance<const char*> (__beg, __end);
+      _2 = (long unsigned int) _1;
+      __dnew = _2;
+      __dnew.3_3 = __dnew;
+      if (__dnew.3_3 > 15) goto <D.54286>; else goto <D.54287>;
+      <D.54286>:
+      _4 = std::__cxx11::basic_string<char>::_M_create (this, &__dnew, 0);
+      std::__cxx11::basic_string<char>::_M_data (this, _4);
+      __dnew.4_5 = __dnew;
+      std::__cxx11::basic_string<char>::_M_capacity (this, __dnew.4_5);
+      goto <D.54288>;
+      <D.54287>:
+      std::__cxx11::basic_string<char>::_M_init_local_buf (this);
+      <D.54288>:
+      std::__cxx11::basic_string<char>::_M_construct<const char*>(const char*, const char*, std::forward_iterator_tag)::_Guard::_Guard (&__guard, this);
+      try
+        {
+          _6 = std::__cxx11::basic_string<char>::_M_data (this);
+          std::__cxx11::basic_string<char>::_S_copy_chars (_6, __beg, __end);
+          __guard._M_guarded = 0B;
+          __dnew.5_7 = __dnew;
+          std::__cxx11::basic_string<char>::_M_set_length (this, __dnew.5_7);
+        }
+      finally
+        {
+          std::__cxx11::basic_string<char>::_M_construct<const char*>(const char*, const char*, std::forward_iterator_tag)::_Guard::~_Guard (&__guard);
+        }
+    }
+  finally
+    {
+      __dnew = {CLOBBER(eol)};
+      __guard = {CLOBBER(eol)};
+    }
+}
+
+
+__attribute__((always_inline, nodiscard))
+difference_type std::distance<const char*> (const char * __first, const char * __last)
+{
+  difference_type D.54292;
+  struct random_access_iterator_tag D.54293;
+
+  std::__iterator_category<const char*> (&__first);
+  __first.6_1 = __first;
+  D.54292 = std::__distance<const char*> (__first.6_1, __last, D.54293);
+  return D.54292;
+}
+
+
+__attribute__((always_inline))
+struct iterator_category std::__iterator_category<const char*> (const char * const & D.53905)
+{
+  struct iterator_category D.54295;
+
+  return D.54295;
+}
+
+
+__attribute__((always_inline))
+difference_type std::__distance<const char*> (const char * __first, const char * __last, struct random_access_iterator_tag D.53914)
+{
+  difference_type D.54297;
+
+  D.54297 = __last - __first;
+  return D.54297;
+}
+
+
+__attribute__((always_inline))
+void std::__cxx11::basic_string<char>::_M_init_local_buf (struct basic_string * const this)
+{
+  try
+    {
+
+    }
+  catch
+    {
+      <<<eh_must_not_throw (terminate)>>>
+    }
+}
+
+
+void std::__cxx11::basic_string<char>::_M_construct<const char*>(const char*, const char*, std::forward_iterator_tag)::_Guard::_Guard (struct _Guard * const this, struct basic_string * __s)
+{
+  *this = {CLOBBER};
+  {
+    this->_M_guarded = __s;
+  }
+}
+
+
+void std::__cxx11::basic_string<char>::_M_construct<const char*>(const char*, const char*, std::forward_iterator_tag)::_Guard::~_Guard (struct _Guard * const this)
+{
+  try
+    {
+      {
+        try
+          {
+            _1 = this->_M_guarded;
+            if (_1 != 0B) goto <D.54299>; else goto <D.54300>;
+            <D.54299>:
+            _2 = this->_M_guarded;
+            std::__cxx11::basic_string<char>::_M_dispose (_2);
+            goto <D.54301>;
+            <D.54300>:
+            <D.54301>:
+          }
+        finally
+          {
+            *this = {CLOBBER};
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (terminate)>>>
+    }
+}
+
+
+void std::__cxx11::basic_string<char>::_Alloc_hider::~_Alloc_hider (struct _Alloc_hider * const this)
+{
+  try
+    {
+      try
+        {
+
+        }
+      finally
+        {
+          std::allocator<char>::~allocator (this);
+        }
+    }
+  finally
+    {
+      *this = {CLOBBER};
+    }
+}
+
+
+__attribute__((always_inline))
+void std::allocator<char>::~allocator (struct allocator * const this)
+{
+  try
+    {
+      {
+        try
+          {
+
+          }
+        finally
+          {
+            std::__new_allocator<char>::~__new_allocator (this);
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (terminate)>>>
+    }
+}
+
+
+void std::__new_allocator<char>::~__new_allocator (struct __new_allocator * const this)
+{
+  try
+    {
+      {
+
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (terminate)>>>
+    }
+}
+
+
+void NamedValue<int>::NamedValue (struct NamedValue * const this, const struct string & _name, const int & _value)
+{
+  MEM[(struct __as_base  &)this] = {CLOBBER};
+  {
+    _1 = &_ZTV10NamedValueIiE + 16;
+    this->_vptr.NamedValue = _1;
+    _2 = &this->_name;
+    std::__cxx11::basic_string<char>::basic_string (_2);
+    try
+      {
+        _3 = &this->_name;
+        std::__cxx11::basic_string<char>::operator= (_3, _name);
+        _4 = *_value;
+        this->_value = _4;
+      }
+    catch
+      {
+        _5 = &this->_name;
+        std::__cxx11::basic_string<char>::~basic_string (_5);
+      }
+  }
+}
+
+
+void NamedValue<int>::value (struct NamedValue * const this, const int & _value)
+{
+  _1 = *_value;
+  this->_value = _1;
+}
+
+
+void NamedValue<int>::name (struct NamedValue * const this, const struct string & _name)
+{
+  _1 = &this->_name;
+  std::__cxx11::basic_string<char>::operator= (_1, _name);
+}
+
+
+__attribute__((abi_tag ("cxx11")))
+struct string NamedValue<int>::name (const struct NamedValue * const this)
+{
+  _1 = &this->_name;
+  std::__cxx11::basic_string<char>::basic_string (<retval>, _1);
+  return <retval>;
+}
+
+
+void std::__cxx11::basic_string<char>::basic_string (struct basic_string * const this, const struct basic_string & __str)
+{
+  struct allocator D.53810;
+  struct forward_iterator_tag D.54305;
+
+  *this = {CLOBBER};
+  {
+    _1 = &this->_M_dataplus;
+    try
+      {
+        _2 = std::__cxx11::basic_string<char>::_M_get_allocator (__str);
+        D.53810 = __gnu_cxx::__alloc_traits<std::allocator<char>, char>::_S_select_on_copy (_2); [return slot optimization]
+        try
+          {
+            _3 = std::__cxx11::basic_string<char>::_M_local_data (this);
+            std::__cxx11::basic_string<char>::_Alloc_hider::_Alloc_hider (_1, _3, &D.53810);
+          }
+        finally
+          {
+            std::allocator<char>::~allocator (&D.53810);
+          }
+      }
+    finally
+      {
+        D.53810 = {CLOBBER(eol)};
+      }
+    try
+      {
+        _4 = std::__cxx11::basic_string<char>::_M_data (__str);
+        _5 = std::__cxx11::basic_string<char>::length (__str);
+        _6 = _4 + _5;
+        _7 = std::__cxx11::basic_string<char>::_M_data (__str);
+        std::__cxx11::basic_string<char>::_M_construct<char*> (this, _7, _6, D.54305);
+      }
+    catch
+      {
+        _8 = &this->_M_dataplus;
+        std::__cxx11::basic_string<char>::_Alloc_hider::~_Alloc_hider (_8);
+      }
+  }
+}
+
+
+__attribute__((always_inline))
+struct allocator __gnu_cxx::__alloc_traits<std::allocator<char>, char>::_S_select_on_copy (const struct allocator & __a)
+{
+  *<retval> = std::allocator_traits<std::allocator<char> >::select_on_container_copy_construction (__a); [return slot optimization]
+  return <retval>;
+}
+
+
+__attribute__((always_inline))
+struct allocator_type std::allocator_traits<std::allocator<char> >::select_on_container_copy_construction (const struct allocator_type & __rhs)
+{
+  std::allocator<char>::allocator (<retval>, __rhs);
+  return <retval>;
+}
+
+
+void std::__cxx11::basic_string<char>::_Alloc_hider::_Alloc_hider (struct _Alloc_hider * const this, char * __dat, struct allocator & __a)
+{
+  *this = {CLOBBER};
+  {
+    _1 = std::move<std::allocator<char>&> (__a);
+    std::allocator<char>::allocator (this, _1);
+    try
+      {
+        this->_M_p = __dat;
+      }
+    catch
+      {
+        std::allocator<char>::~allocator (this);
+      }
+  }
+}
+
+
+__attribute__((nodiscard))
+struct type & std::move<std::allocator<char>&> (struct allocator & __t)
+{
+  struct type & D.54312;
+
+  try
+    {
+      D.54312 = __t;
+      return D.54312;
+    }
+  catch
+    {
+      <<<eh_must_not_throw (terminate)>>>
+    }
+  __builtin_unreachable trap ();
+}
+
+
+void std::__cxx11::basic_string<char>::_M_construct<char*> (struct basic_string * const this, char * __beg, char * __end, struct forward_iterator_tag D.53446)
+{
+  size_type __dnew;
+  typedef extern struct _Guard _Guard;
+  struct _Guard __guard;
+
+  try
+    {
+      _1 = std::distance<char*> (__beg, __end);
+      _2 = (long unsigned int) _1;
+      __dnew = _2;
+      __dnew.7_3 = __dnew;
+      if (__dnew.7_3 > 15) goto <D.54314>; else goto <D.54315>;
+      <D.54314>:
+      _4 = std::__cxx11::basic_string<char>::_M_create (this, &__dnew, 0);
+      std::__cxx11::basic_string<char>::_M_data (this, _4);
+      __dnew.8_5 = __dnew;
+      std::__cxx11::basic_string<char>::_M_capacity (this, __dnew.8_5);
+      goto <D.54316>;
+      <D.54315>:
+      std::__cxx11::basic_string<char>::_M_init_local_buf (this);
+      <D.54316>:
+      std::__cxx11::basic_string<char>::_M_construct<char*>(char*, char*, std::forward_iterator_tag)::_Guard::_Guard (&__guard, this);
+      try
+        {
+          _6 = std::__cxx11::basic_string<char>::_M_data (this);
+          std::__cxx11::basic_string<char>::_S_copy_chars (_6, __beg, __end);
+          __guard._M_guarded = 0B;
+          __dnew.9_7 = __dnew;
+          std::__cxx11::basic_string<char>::_M_set_length (this, __dnew.9_7);
+        }
+      finally
+        {
+          std::__cxx11::basic_string<char>::_M_construct<char*>(char*, char*, std::forward_iterator_tag)::_Guard::~_Guard (&__guard);
+        }
+    }
+  finally
+    {
+      __dnew = {CLOBBER(eol)};
+      __guard = {CLOBBER(eol)};
+    }
+}
+
+
+__attribute__((always_inline, nodiscard))
+difference_type std::distance<char*> (char * __first, char * __last)
+{
+  difference_type D.54320;
+  struct random_access_iterator_tag D.54321;
+
+  std::__iterator_category<char*> (&__first);
+  __first.10_1 = __first;
+  D.54320 = std::__distance<char*> (__first.10_1, __last, D.54321);
+  return D.54320;
+}
+
+
+__attribute__((always_inline))
+struct iterator_category std::__iterator_category<char*> (char * const & D.53389)
+{
+  struct iterator_category D.54323;
+
+  return D.54323;
+}
+
+
+__attribute__((always_inline))
+difference_type std::__distance<char*> (char * __first, char * __last, struct random_access_iterator_tag D.54129)
+{
+  difference_type D.54325;
+
+  D.54325 = __last - __first;
+  return D.54325;
+}
+
+
+void std::__cxx11::basic_string<char>::_M_construct<char*>(char*, char*, std::forward_iterator_tag)::_Guard::_Guard (struct _Guard * const this, struct basic_string * __s)
+{
+  *this = {CLOBBER};
+  {
+    this->_M_guarded = __s;
+  }
+}
+
+
+void std::__cxx11::basic_string<char>::_M_construct<char*>(char*, char*, std::forward_iterator_tag)::_Guard::~_Guard (struct _Guard * const this)
+{
+  try
+    {
+      {
+        try
+          {
+            _1 = this->_M_guarded;
+            if (_1 != 0B) goto <D.54327>; else goto <D.54328>;
+            <D.54327>:
+            _2 = this->_M_guarded;
+            std::__cxx11::basic_string<char>::_M_dispose (_2);
+            goto <D.54329>;
+            <D.54328>:
+            <D.54329>:
+          }
+        finally
+          {
+            *this = {CLOBBER};
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (terminate)>>>
+    }
+}
+
+
+void NamedValue<int>::~NamedValue (struct NamedValue * const this)
+{
+  try
+    {
+      NamedValue<int>::~NamedValue (this);
+    }
+  finally
+    {
+      operator delete (this, 48);
+    }
+}
+
+
+void NamedValue<int>::~NamedValue (struct NamedValue * const this)
+{
+  try
+    {
+      {
+        _1 = &_ZTV10NamedValueIiE + 16;
+        this->_vptr.NamedValue = _1;
+        try
+          {
+            try
+              {
+
+              }
+            finally
+              {
+                _2 = &this->_name;
+                std::__cxx11::basic_string<char>::~basic_string (_2);
+              }
+          }
+        finally
+          {
+            MEM[(struct __as_base  &)this] = {CLOBBER};
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (terminate)>>>
+    }
+}
+
+
+void std::__cxx11::basic_string<char>::basic_string (struct basic_string * const this)
+{
+  struct allocator D.53327;
+
+  try
+    {
+      *this = {CLOBBER};
+      {
+        _1 = &this->_M_dataplus;
+        try
+          {
+            std::allocator<char>::allocator (&D.53327);
+            try
+              {
+                _2 = std::__cxx11::basic_string<char>::_M_local_data (this);
+                std::__cxx11::basic_string<char>::_Alloc_hider::_Alloc_hider (_1, _2, &D.53327);
+              }
+            finally
+              {
+                std::allocator<char>::~allocator (&D.53327);
+              }
+          }
+        finally
+          {
+            D.53327 = {CLOBBER(eol)};
+          }
+        try
+          {
+            std::__cxx11::basic_string<char>::_M_init_local_buf (this);
+            std::__cxx11::basic_string<char>::_M_set_length (this, 0);
+          }
+        catch
+          {
+            _3 = &this->_M_dataplus;
+            std::__cxx11::basic_string<char>::_Alloc_hider::~_Alloc_hider (_3);
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (terminate)>>>
+    }
+}
+
+
+struct ostream & operator<< <int> (struct ostream & os, const struct NamedValue & nv)
+{
+  struct ostream & D.54330;
+  struct string D.52106;
+
+  try
+    {
+      _1 = nv->_vptr.NamedValue;
+      _2 = _1 + 16;
+      _3 = *_2;
+      D.52106 = OBJ_TYPE_REF(_3;(const struct NamedValue)nv->2B) (nv); [return slot optimization]
+      try
+        {
+          _4 = std::operator<< <char, std::char_traits<char>, std::allocator<char> > (os, &D.52106);
+          _5 = std::operator<< <std::char_traits<char> > (_4, ": ");
+          _6 = nv->_vptr.NamedValue;
+          _7 = _6 + 32;
+          _8 = *_7;
+          _9 = OBJ_TYPE_REF(_8;(const struct NamedValue)nv->4B) (nv);
+          D.54330 = std::basic_ostream<char>::operator<< (_5, _9);
+          return D.54330;
+        }
+      finally
+        {
+          std::__cxx11::basic_string<char>::~basic_string (&D.52106);
+        }
+    }
+  finally
+    {
+      D.52106 = {CLOBBER(eol)};
+    }
+}
+
+
+struct NamedValue & NamedValue<int>::operator= (struct NamedValue * const this, const int & _value)
+{
+  struct NamedValue & D.54340;
+
+  _1 = this->_vptr.NamedValue;
+  _2 = _1 + 40;
+  _3 = *_2;
+  OBJ_TYPE_REF(_3;(struct NamedValue)this->5B) (this, _value);
+  D.54340 = this;
+  return D.54340;
+}
+
+
+int NamedValue<int>::value (const struct NamedValue * const this)
+{
+  int D.54342;
+
+  D.54342 = this->_value;
+  return D.54342;
+}
+
+
+void std::__cxx11::basic_string<char>::~basic_string (struct basic_string * const this)
+{
+  try
+    {
+      {
+        try
+          {
+            try
+              {
+                std::__cxx11::basic_string<char>::_M_dispose (this);
+              }
+            finally
+              {
+                _1 = &this->_M_dataplus;
+                std::__cxx11::basic_string<char>::_Alloc_hider::~_Alloc_hider (_1);
+              }
+          }
+        finally
+          {
+            *this = {CLOBBER};
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (terminate)>>>
+    }
+}
+
+

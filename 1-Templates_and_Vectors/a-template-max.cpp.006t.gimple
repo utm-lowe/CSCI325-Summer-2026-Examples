@@ -1,0 +1,52 @@
+int main ()
+{
+  int D.53857;
+
+  _1 = max<int> (3, 7);
+  _2 = std::basic_ostream<char>::operator<< (&cout, _1);
+  std::basic_ostream<char>::operator<< (_2, endl);
+  _3 = max<double> (3.140000000000000124344978758017532527446746826171875e+0, 2.70999999999999996447286321199499070644378662109375e+0);
+  _4 = std::basic_ostream<char>::operator<< (&cout, _3);
+  std::basic_ostream<char>::operator<< (_4, endl);
+  _5 = max<int> (3, 2);
+  _6 = std::basic_ostream<char>::operator<< (&cout, _5);
+  std::basic_ostream<char>::operator<< (_6, endl);
+  D.53857 = 0;
+  return D.53857;
+}
+
+
+double max<double> (double a, double b)
+{
+  double D.53864;
+
+  if (a > b) goto <D.53862>; else goto <D.53863>;
+  <D.53862>:
+  D.53864 = a;
+  // predicted unlikely by early return (on trees) predictor.
+  return D.53864;
+  <D.53863>:
+  D.53864 = b;
+  // predicted unlikely by early return (on trees) predictor.
+  return D.53864;
+  __builtin_unreachable trap ();
+}
+
+
+int max<int> (int a, int b)
+{
+  int D.53868;
+
+  if (a > b) goto <D.53866>; else goto <D.53867>;
+  <D.53866>:
+  D.53868 = a;
+  // predicted unlikely by early return (on trees) predictor.
+  return D.53868;
+  <D.53867>:
+  D.53868 = b;
+  // predicted unlikely by early return (on trees) predictor.
+  return D.53868;
+  __builtin_unreachable trap ();
+}
+
+
