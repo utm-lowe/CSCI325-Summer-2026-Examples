@@ -1,22 +1,15 @@
 #include <iostream>
 #include <vector> 
 #include <exception>
+#include <algorithm>
+#include <iterator>
 
 template <typename T>
 void printVector(std::vector<T> &v) {
-    bool first=true;
+    std::ostream_iterator<T> out(std::cout, ", ");
     std::cout << "{";
-    //foreach loop 
-    //loop over any STL container (any iterator interface)
-    for(T& o : v) {
-        if(not first) {
-            std::cout << ", ";
-        } else {
-            first = false;
-        }
-        std::cout << o;
-    }
-    std::cout << "}" << std::endl;
+    std::copy(v.begin(), v.end()-1, out);
+    std::cout << v.back() << "}" << std::endl;
 }
 
 int main()
