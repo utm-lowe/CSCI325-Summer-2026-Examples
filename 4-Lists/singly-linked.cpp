@@ -134,6 +134,7 @@ public:
         iterator& operator=(const iterator &rhs) 
         {
             node = rhs.node;
+            return *this;
         }
     private:
         iterator(Node *node) {
@@ -155,18 +156,129 @@ public:
         return iterator(nullptr);
     }
 
+    // insert after
+    void insertAfter(iterator &itr, const T& data) 
+    {
+        //detect tail insertion
+        if(itr.node == tail) {
+            push_back(data);
+            return;
+        }
+
+        Node *node = new Node(data);
+        node->next = itr.node->next;
+        itr.node->next = node;
+    }
+
+    // delete after
+    void deleteAfter(iterator &itr) 
+    {
+        if(itr.node->next == nullptr) {
+            return;
+        }
+
+        Node *node = itr.node->next;
+        itr.node->next = node->next;
+        delete node;
+    }
+
+    // remove the first element
+    void pop_front()
+    {
+        Node *node = head;
+        head = head->next;
+        delete node;
+
+        if(head == nullptr) {
+            tail = nullptr;
+        }
+    }
 };
+
+template <typename T>
+std::ostream &operator<<(std::ostream &os, SinglyLinkedList<T> &l);
+
+template<typename T>
+void sortedInsert(SinglyLinkedList<T> &l, const T& data);
 
 int main()
 {
     SinglyLinkedList<int> l1;
 
-    l1.push_back(1);
-    l1.push_back(2);
-    l1.push_back(3);
-    l1.push_front(0);
+    std::cout << l1 << std::endl;
 
-    for(auto itr = l1.begin(); itr != l1.end(); itr++) {
-        std::cout << *itr << std::endl;
+    l1.push_back(1);
+    std::cout << l1 << std::endl;
+
+    l1.push_back(2);
+    std::cout << l1 << std::endl;
+
+    l1.push_back(3);
+    std::cout << l1 << std::endl;
+
+    l1.push_front(0);
+    std::cout << l1 << std::endl;
+
+    auto itr=l1.begin();
+    itr++;
+    l1.insertAfter(itr, 33);
+    std::cout << l1 << std::endl;
+
+    itr++;
+    l1.deleteAfter(itr);
+    std::cout << l1 << std::endl;
+
+    while(!l1.empty()) {
+        l1.pop_front();
+        std::cout << l1 << std::endl;
     }
+
+    std::cout << "Sorted Insert" << std::endl;
+    sortedInsert(l1, 20);
+    std::cout << l1 << std::endl;
+    sortedInsert(l1, 2);
+    std::cout << l1 << std::endl;
+    sortedInsert(l1, 30);
+    std::cout << l1 << std::endl;
+    sortedInsert(l1, 25);
+    std::cout << l1 << std::endl;
+    sortedInsert(l1, 12);
+    std::cout << l1 << std::endl;
+    sortedInsert(l1, 0);
+    std::cout << l1 << std::endl;
+    sortedInsert(l1, 200);
+    std::cout << l1 << std::endl;
+}
+
+template <typename T>
+std::ostream &operator<<(std::ostream &os, SinglyLinkedList<T> &l)
+{
+    for(auto itr = l.begin(); itr != l.end(); itr++) {
+        if(itr != l.begin()) {
+            os << "->";
+        }
+        os << *itr;
+    }
+
+    return os;
+}
+
+template<typename T>
+void sortedInsert(SinglyLinkedList<T> &l, const T& data)
+{
+    if(l.empty() || data < l.front()) {
+        l.push_front(data);
+        return;
+    }
+
+    //previous iterator and itr chase each other to find the slot
+    auto pitr = l.begin();
+    auto itr = l.begin();
+    itr++;
+    while(itr != l.end() and *itr <= data) {
+        pitr = itr;
+        itr++;
+    }
+
+    l.insertAfter(pitr, data);
 }
